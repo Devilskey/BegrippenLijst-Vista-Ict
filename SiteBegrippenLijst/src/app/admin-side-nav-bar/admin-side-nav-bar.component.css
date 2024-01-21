@@ -1,0 +1,26 @@
+.SideBar{
+    width: 160px;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    left: -250px;
+    background-color: #00555c;
+    color: #fff;
+    padding: 10px;
+    padding-top: 80px;
+    z-index: 0;
+    transition: left 0.3s ease-in-out;
+}
+
+a {
+    font-size: 20px;
+    color: whitesmoke;
+    margin: 7px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff265;
+}

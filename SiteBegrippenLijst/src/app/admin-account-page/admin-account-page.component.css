@@ -1,0 +1,14 @@
+.Page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.AccountDiv{
+    display: flex;
+    margin-top: 40px;
+    flex:1;
+    align-items: center;
+    flex-direction: column;
+}

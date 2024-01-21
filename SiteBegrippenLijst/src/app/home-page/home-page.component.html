@@ -1,0 +1,18 @@
+<div class="Page">
+
+    <app-nav-bar></app-nav-bar>
+
+    <div class="BegrippenlijstDiv">
+        <div class="ListItem" *ngFor="let Item of Concepts; let i = index">
+            <div class="ItemRow">
+                <a class="Button" (click)="MoreData(i)">V</a>
+                <p>{{Item.Title}}</p> 
+
+            </div>
+            <div id={{i.toString()}} class="Context">
+                <div *ngIf="staticVar.Lang === 'NL'"> {{Item.DutchConcept}} </div>
+                <div *ngIf="staticVar.Lang === 'EN'"> {{Item.EnglishConcept}} </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+.Page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.BegrippenlijstDiv{
+    display: flex;
+    margin-top: 40px;
+    flex:1;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ListItem{
+    background-color: #fff265;
+    width: 60%;
+    text-align: center;
+    font-size: 22px;
+    border-style:solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+.ItemRow{
+    display: flex;
+    align-items: center;
+    p {
+        margin-left: 2%;
+    }
+}
+
+.OutButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ec644a;
+}
+
+.OutButton:hover {
+    background-color: #ff8269;
+}
+
+.ConceptAddon{
+    margin-left: auto;
+
+    button {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.Context{
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    text-align: left;
+    background-color: #fff7a0
+    
+}

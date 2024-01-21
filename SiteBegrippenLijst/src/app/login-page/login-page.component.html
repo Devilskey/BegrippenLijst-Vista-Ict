@@ -1,0 +1,26 @@
+<div class="LoginPage">
+    <div class="LoginPaneldiv">
+        <div class="loginPanel">
+             <p><b>Login</b></p>
+
+            <label for="Email">
+                E-mail
+            </label>
+            <input type="text" id="email" [(ngModel)]='Email'/>
+
+            <label for="wachtwoord">
+                Wachtwoord
+            </label>
+            
+            <input type="text" id="wachtwoord" [(ngModel)]='Password'/>
+            <button (click)="Login()">
+                Login 
+            </button>
+            <button (click)="BackToHomePage()"> back</button>
+        </div>
+    </div>
+</div>
+
+<div class="Background">
+
+</div>
