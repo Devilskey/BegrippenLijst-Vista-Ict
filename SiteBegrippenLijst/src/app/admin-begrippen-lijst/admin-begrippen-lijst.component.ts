@@ -18,6 +18,26 @@ export class AdminBegrippenLijstComponent {
     {Id: 3, Title: "Solid", DutchConcept: "yrds", EnglishConcept: "yrds"}
    ];
 
+   VisibleAddConcept(){
+      let AddConcept = document.getElementById("VisibleAddConcept");
+      let AddButton = document.getElementById("AddButton");
+
+      if(AddConcept && AddButton){
+        if(AddConcept.style.display != "none"){
+           AddConcept.style.display = "none";
+           AddButton.innerHTML = "+";
+        }
+        else {
+          AddConcept.style.display = "flex";
+          AddButton.innerHTML = "-";
+        }
+      }
+   }
+
+   AddConcept(){
+
+   }
+
    DeleteConcept(id:number){
 
    }

@@ -61,3 +61,40 @@
     background-color: #fff7a0
     
 }
+
+.AddNew{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #ff8269;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.AddNewCollums{
+    display:  none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.AddNewTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.TextInput{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.addConcept {
+    padding: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}

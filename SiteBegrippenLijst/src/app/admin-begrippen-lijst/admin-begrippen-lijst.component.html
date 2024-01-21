@@ -26,5 +26,19 @@
             </div>
 
         </div>
+        <div class="ListItem">
+            <div class="AddNewCollums" id="VisibleAddConcept">
+                <div class="AddNewTitle">
+                    <label for="EnterTitle">Title: </label>
+                    <input type="text" id="EnterTitle">
+                </div>
+                <label for="EnglishConcept">English Version: </label>
+                <textarea class="TextInput"id="EnglishConcept"></textarea>
+                <label for="DutchConcept">Dutch Version: </label>
+                <textarea class="TextInput" id="DutchConcept" wrap="none"></textarea>
+                <button  class="addConcept" (click)="AddConcept()">Add Concept</button>
+            </div>
+            <button Id="AddButton" class="AddNew" (click)="VisibleAddConcept()">+</button>
+        </div>
     </div>
 </div>
