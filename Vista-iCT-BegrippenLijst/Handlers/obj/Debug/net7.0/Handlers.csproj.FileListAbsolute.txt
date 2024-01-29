@@ -1,0 +1,12 @@
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\bin\Debug\net7.0\Handlers.deps.json
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\bin\Debug\net7.0\Handlers.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\bin\Debug\net7.0\Handlers.pdb
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\obj\Debug\net7.0\Handlers.GeneratedMSBuildEditorConfig.editorconfig
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\obj\Debug\net7.0\Handlers.AssemblyInfoInputs.cache
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\obj\Debug\net7.0\Handlers.AssemblyInfo.cs
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\obj\Debug\net7.0\Handlers.csproj.CoreCompileInputs.cache
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\obj\Debug\net7.0\Handlers.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\obj\Debug\net7.0\refint\Handlers.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\obj\Debug\net7.0\Handlers.pdb
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\obj\Debug\net7.0\ref\Handlers.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\Handlers\obj\Debug\net7.0\Handlers.csproj.AssemblyReference.cache

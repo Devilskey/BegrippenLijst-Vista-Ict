@@ -1,0 +1,15 @@
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\bin\Debug\net7.0\extensions.deps.json
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\bin\Debug\net7.0\extensions.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\bin\Debug\net7.0\extensions.pdb
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\extensions.csproj.AssemblyReference.cache
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\extensions.GeneratedMSBuildEditorConfig.editorconfig
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\extensions.AssemblyInfoInputs.cache
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\extensions.AssemblyInfo.cs
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\extensions.csproj.CoreCompileInputs.cache
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\extensions.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\refint\extensions.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\extensions.pdb
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\ref\extensions.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\bin\Debug\net7.0\Handlers.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\bin\Debug\net7.0\Handlers.pdb
+D:\c# Projects\Vista-iCT-BegrippenLijst\extensions\obj\Debug\net7.0\extensions.csproj.CopyComplete

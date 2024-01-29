@@ -1,0 +1,12 @@
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\bin\Debug\net7.0\Objects.deps.json
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\bin\Debug\net7.0\Objects.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\bin\Debug\net7.0\Objects.pdb
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\obj\Debug\net7.0\Objects.GeneratedMSBuildEditorConfig.editorconfig
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\obj\Debug\net7.0\Objects.AssemblyInfoInputs.cache
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\obj\Debug\net7.0\Objects.AssemblyInfo.cs
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\obj\Debug\net7.0\Objects.csproj.CoreCompileInputs.cache
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\obj\Debug\net7.0\Objects.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\obj\Debug\net7.0\refint\Objects.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\obj\Debug\net7.0\Objects.pdb
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\obj\Debug\net7.0\ref\Objects.dll
+D:\c# Projects\Vista-iCT-BegrippenLijst\Objects\obj\Debug\net7.0\Objects.csproj.AssemblyReference.cache

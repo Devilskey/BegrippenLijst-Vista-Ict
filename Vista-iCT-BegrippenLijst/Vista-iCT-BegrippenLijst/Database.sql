@@ -1,0 +1,2 @@
+﻿CREATE TABLE IF NOT EXISTS `Administrator` (`Id` integer PRIMARY KEY AUTO_INCREMENT, `Email` varchar(32), `Password` varchar(256));
+CREATE TABLE IF NOT EXISTS `Concept` ( `Id` integer PRIMARY KEY AUTO_INCREMENT, `Title` text, `English_Version` text, `Dutch_Version` text, `Created_At` DateTime);
