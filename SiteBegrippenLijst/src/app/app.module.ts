@@ -13,6 +13,7 @@ import { AdminSideNavBarComponent } from './admin-side-nav-bar/admin-side-nav-ba
 import { AdminAccountPageComponent } from './admin-account-page/admin-account-page.component';
 import { StaticVars } from './Data/StaticVars';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [StaticVars],
   bootstrap: [AppComponent]

@@ -5,5 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class StaticVars {
     Lang:string = "NL";
-    Api:string = "localhost"
+    static Api:string = "https://localhost:7220/"
+    Token:string = "";
 }
