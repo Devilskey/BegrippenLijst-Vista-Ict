@@ -8,12 +8,11 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
-RUN echo "Current working directory: $(pwd)"
 
-COPY ["Vista-iCT-BegrippenLijst/Vista-iCT-BegrippenLijst/Vista-iCT-BegrippenLijst.csproj", "Vista-iCT-BegrippenLijst/"]
-COPY ["Vista-iCT-BegrippenLijst/extensions/extensions.csproj", "extensions/"]
-COPY ["Vista-iCT-BegrippenLijst/Handlers/Handlers.csproj", "Handlers/"]
-COPY ["Vista-iCT-BegrippenLijst/Objects/Objects.csproj", "Objects/"]
+COPY ["Vista-iCT-BegrippenLijst.csproj", "Vista-iCT-BegrippenLijst/"]
+COPY ["../extensions/extensions.csproj", "extensions/"]
+COPY ["../Handlers/Handlers.csproj", "Handlers/"]
+COPY ["../Objects/Objects.csproj", "Objects/"]
 
 RUN dotnet restore "Vista-iCT-BegrippenLijst/Vista-iCT-BegrippenLijst.csproj"
 COPY . .
