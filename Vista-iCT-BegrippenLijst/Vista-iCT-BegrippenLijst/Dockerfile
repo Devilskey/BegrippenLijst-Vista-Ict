@@ -8,6 +8,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["Vista-iCT-BegrippenLijst/Vista-iCT-BegrippenLijst.csproj", "Vista-iCT-BegrippenLijst/"]
+COPY ["extensions/extensions.csproj", "extensions/"]
+COPY ["Handlers/Handlers.csproj", "Handlers/"]
+COPY ["Objects/Objects.csproj", "Objects/"]
 RUN dotnet restore "Vista-iCT-BegrippenLijst/Vista-iCT-BegrippenLijst.csproj"
 COPY . .
 WORKDIR "/src/Vista-iCT-BegrippenLijst"

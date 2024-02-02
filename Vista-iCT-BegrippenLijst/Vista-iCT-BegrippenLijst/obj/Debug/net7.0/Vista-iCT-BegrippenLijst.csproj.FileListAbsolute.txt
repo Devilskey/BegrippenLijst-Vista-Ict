@@ -94,3 +94,5 @@ D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.
 D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\logs\Smorts-20240128.json
+D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\logs\Smorts-20240201.json
+D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\logs\Smorts-20240202.json

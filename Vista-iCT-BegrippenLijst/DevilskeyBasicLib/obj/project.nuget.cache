@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "zEyN/3fnfqMvpTD7JMJyhhZZy7t190ABwyCnvHvvCE+VgwZ7frLwgN9+4orqug+mBhJ+3DXLTgN8vZb010FZ8g==",
+  "success": true,
+  "projectFilePath": "D:\\c# Projects\\Vista-iCT-BegrippenLijst\\DevilskeyBasicLib\\DevilskeyBasicLib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ecola\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\ecola\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\ecola\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

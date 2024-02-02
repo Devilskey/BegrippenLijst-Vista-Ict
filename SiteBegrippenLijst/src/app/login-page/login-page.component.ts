@@ -27,22 +27,23 @@ export class LoginPageComponent {
       switch(Token){
         case "Empty String detected code 500":
           token = "Error"
-         return;
+          break;
          case "Error No user found with this email adress.":
           ErrorCode = "No account with this email";
           token = "Error"
-         return;
+          break;
          case "Password Not Valid": 
           ErrorCode = "Password Incorrect"
           token = "Error"
-         return;
+          break;
         default:
           console.log(Token);
           token = Token;
-          if(token != "Error" && token != "") {
-            this.router.navigateByUrl("/Admin/BegrippenLijst");
-          }
-          return;
+          break;
+      }
+      if(token != "Error" && token != "") {
+        window.localStorage.setItem('Vista.BergrippenLijst.Token.Admin', token)
+        this.router.navigateByUrl("/Admin/BegrippenLijst");
       }
     } );
   }

@@ -4,6 +4,8 @@ using MySql.Data.MySqlClient;
 using Objects;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
+using Google.Protobuf.Collections;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Vista_iCT_BegrippenLijst.Controllers
 {
@@ -54,17 +56,49 @@ namespace Vista_iCT_BegrippenLijst.Controllers
 
         [Authorize]
         [HttpPut("ChangeEmail")]
-        public int ChangeEmail(string Email, string EmailVerify)
+        public Task<int> ChangeEmail(ChangeEmailObject email)
         {
-            return 200;
+            if (string.IsNullOrEmpty(email.Email) && string.IsNullOrEmpty(email.EmailVerify))
+                return Task.FromResult<int>(500);
+
+            if (email.Email != email.EmailVerify)
+                return Task.FromResult<int>(500);
+
+
+            using DatabaseHandler database = new DatabaseHandler();
+
+            MySqlCommand changePasswordSql = new MySqlCommand();
+
+            changePasswordSql.CommandText = "UPDATE Administrator SET Email=@Email WHERE Id=@Id;";
+            changePasswordSql.Parameters.AddWithValue("@Email", email.Email);
+            changePasswordSql.Parameters.AddWithValue("@Id", 1);
+
+            if (database.Update(changePasswordSql).isSuccesfull)
+                return Task.FromResult<int>(200);
+            return Task.FromResult<int>(500);
         }
 
         [Authorize]
         [HttpPut("ChangePassword")]
-        public Task<int> ChangePassword(string Password, string PasswordVerify)
+        public Task<int> ChangePassword(ChangePasswordObject password)
         {
+            if(string.IsNullOrEmpty(password.Password) || string.IsNullOrEmpty(password.PasswordVerify))
+                return Task.FromResult<int>(503);
 
-            return Task.FromResult<int>(200);
+            if(password.Password != password.PasswordVerify)
+                return Task.FromResult<int>(500);
+
+            using DatabaseHandler database = new DatabaseHandler();
+
+            MySqlCommand changePasswordSql = new MySqlCommand();
+
+            changePasswordSql.CommandText = "UPDATE Administrator SET Password=@password WHERE Id=@Id;";
+            changePasswordSql.Parameters.AddWithValue("@password", BCryptHandler.BcrypyBasicEncryption(password.Password));
+            changePasswordSql.Parameters.AddWithValue("@Id", 1);
+
+            if (database.Update(changePasswordSql).isSuccesfull)
+                return Task.FromResult<int>(200);
+            return Task.FromResult<int>(500);
         }
 
     }

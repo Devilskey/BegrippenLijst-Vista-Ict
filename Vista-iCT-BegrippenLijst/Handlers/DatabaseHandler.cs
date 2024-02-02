@@ -14,7 +14,7 @@ namespace Handlers
             string DatabaseName = Environment.GetEnvironmentVariable("DatabaseDb") ?? "ConceptDatabase";
             string Password = Environment.GetEnvironmentVariable("PasswordDb") ?? "password";
             string Username = Environment.GetEnvironmentVariable("UsernameDb") ?? "root";
-            string Server = Environment.GetEnvironmentVariable("HostDb") ?? "localhost";
+            string Server = Environment.GetEnvironmentVariable("HostDb") ?? "192.168.2.13";
 
             string connectionString = $"server={Server};port=3306;uid={Username};pwd={Password};database={DatabaseName};";
 
@@ -79,7 +79,7 @@ namespace Handlers
             catch (Exception ex)
             {
                 Console.WriteLine($"ERROR: {ex.Message} : {ex.Data} : {ex}");
-                return "";
+                return "ex.Message";
             }
         }
 

@@ -3,6 +3,18 @@
     <app-admin-nav-bar></app-admin-nav-bar>
 
     <div class="AccountDiv">
-    
+        <label for="Email">Email</label>
+        <input type="text" id="Email" [(ngModel)]="EmailData.Email">
+        <label for="EmailVerify">Email Verify</label>
+        <input type="text" id="EmailVerify" [(ngModel)]="EmailData.EmailVerify">
+        <button id="SubmitEmail" (click)="ChangeEmail()">Change Email</button><br/>
+
+        <label for="Password">Password</label>
+        <input type="password" id="Password" [(ngModel)]="PasswordData.Password">
+        <label for="PasswordVerify">Password Verify</label>
+        <input type="password" id="PasswordVerify" [(ngModel)]="PasswordData.PasswordVerify">
+        <button id="SubmitPassword" (click)="ChangePassword()">Change Password</button>
+
+
     </div>
 </div>

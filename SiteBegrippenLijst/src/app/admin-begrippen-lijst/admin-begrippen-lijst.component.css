@@ -23,6 +23,10 @@
     border-width: 2px;
 }
 
+.addConcept{
+    margin-bottom: 10px;
+
+}
 .ItemRow{
     display: flex;
     align-items: center;

@@ -1,29 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Concept } from 'src/Objects/Concept';
 import { StaticVars } from '../Data/StaticVars';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ApiResponseConcepts } from 'src/Objects/ApiResponseConcepts';
 
 @Component({
   selector: 'app-admin-begrippen-lijst',
   templateUrl: './admin-begrippen-lijst.component.html',
   styleUrls: ['./admin-begrippen-lijst.component.css']
 })
-export class AdminBegrippenLijstComponent {
-  
-  constructor(public staticVar: StaticVars) {}
+export class AdminBegrippenLijstComponent implements OnInit{
 
-  Concepts:Concept[] = [
-    {Id: 0, Title: "PHP", DutchConcept: "yrds", EnglishConcept: "yrds"},
-    {Id: 1, Title: "OOP", DutchConcept: "yrds", EnglishConcept: "yrds"},
-    {Id: 2, Title: "CMS", DutchConcept: "yrds", EnglishConcept: "yrds"},
-    {Id: 3, Title: "Solid", DutchConcept: "yrds", EnglishConcept: "yrds"}
-   ];
+  UpdateConcepts: Concept = new Concept;
+   
+
+  NewConcept = {
+    title: "",
+    englishVersion: "",
+    dutchVersion: "",
+  }
+
+  ModeEdit:boolean = false;
+
+  Concepts!:Concept[];
+
+  private authtoken:string= window.localStorage.getItem('Vista.BergrippenLijst.Token.Admin') ?? "";
+
+  constructor(public staticVar: StaticVars, private Http:HttpClient) {}
+
+  ngOnInit(): void {
+    this.GetAllConcepts();
+  }
+
+  GetAllConcepts(){
+    this.Http.get<ApiResponseConcepts>(`${StaticVars.Api}Concept/GetConcepts`).subscribe((ApiConcepts:ApiResponseConcepts) => {
+      this.Concepts = JSON.parse(ApiConcepts.data);
+   });
+  }
 
    VisibleAddConcept(){
+      this.ModeEdit = false;
+      console.log( this.ModeEdit)
+
       let AddConcept = document.getElementById("VisibleAddConcept");
       let AddButton = document.getElementById("AddButton");
 
       if(AddConcept && AddButton){
-        if(AddConcept.style.display != "none"){
+        if(AddConcept.style.display == "flex"){
            AddConcept.style.display = "none";
            AddButton.innerHTML = "+";
         }
@@ -34,21 +57,75 @@ export class AdminBegrippenLijstComponent {
       }
    }
 
-   AddConcept(){
+   UpdateConcept() {
+    const header = new HttpHeaders({
+      Authorization: `Bearer ${this.authtoken}`,
+    });
 
+    let UpdateConceptData = {
+      id: this.UpdateConcepts.Id,
+      title: this.UpdateConcepts.Title,
+      englishVersion: this.UpdateConcepts.English_Version,
+      dutchVersion: this.UpdateConcepts.Dutch_Version
+    }
+
+    this.Http.put(`${StaticVars.Api}Concept/EditConcept`, UpdateConceptData, { headers: header }).subscribe(() => {});
+
+   }
+
+   AddConcept(){
+    const header = new HttpHeaders({
+      Authorization: `Bearer ${this.authtoken}`,
+    });
+
+    this.Http.post(`${StaticVars.Api}Concept/AddConcept`, this.NewConcept, { headers: header }).subscribe(
+      response => {
+        if(response === 200){
+           this.GetAllConcepts();
+           this.NewConcept = {
+            title: "",
+            englishVersion: "",
+            dutchVersion: "",
+          }
+        }
+      }
+    );
    }
 
    DeleteConcept(id:number){
 
+    const header = new HttpHeaders({
+      Authorization: `Bearer ${this.authtoken}`,
+    });
+
+    this.Http.delete(`${StaticVars.Api}Concept/DeleteConcept?DeleteId=${id}`, { headers: header }).subscribe( response => {
+      if(response === 200){
+         this.GetAllConcepts();
+      }
+    });
    }
 
-   EditConcept(id:number){
+   EditConcept(index:number){
+    this.UpdateConcepts = this.Concepts[index]
+    this.ModeEdit = true;
+    
+    let AddConcept = document.getElementById("VisibleAddConcept");
+    let AddButton = document.getElementById("AddButton");
 
+      if(AddConcept && AddButton){
+        if(AddConcept.style.display == "flex" && !this.ModeEdit){
+          AddConcept.style.display = "none";
+          AddButton.innerHTML = "+";
+        }
+        else {
+          AddConcept.style.display = "flex";
+          AddButton.innerHTML = "-";
+        }
+      }
    }
 
 
    MoreData(id:number){
-    console.log(`More Data ${id}`);
     let extraContent = document.getElementById(id.toString());
     if(extraContent){
       let stateElement = extraContent.style.display;
