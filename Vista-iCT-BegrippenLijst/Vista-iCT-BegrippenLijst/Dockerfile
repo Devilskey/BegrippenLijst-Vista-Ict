@@ -9,7 +9,8 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["Vista-iCT-BegrippenLijst/Vista-iCT-BegrippenLijst.csproj", "Vista-iCT-BegrippenLijst/"]
 COPY ["Objects/Objects.csproj", "Objects/"]
-COPY ["extensions/extensions.csproj", "extensions/"]
+
+
 RUN dotnet restore "Vista-iCT-BegrippenLijst/Vista-iCT-BegrippenLijst.csproj"
 COPY . .
 WORKDIR "/src/Vista-iCT-BegrippenLijst"
