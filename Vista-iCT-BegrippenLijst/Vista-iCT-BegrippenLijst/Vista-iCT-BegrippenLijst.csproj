@@ -24,4 +24,10 @@
     <ProjectReference Include="..\Objects\Objects.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Database.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -96,3 +96,5 @@ D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.
 D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\logs\Smorts-20240128.json
 D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\logs\Smorts-20240201.json
 D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\logs\Smorts-20240202.json
+D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\logs\Smorts-20240204.json
+D:\c# Projects\Vista-iCT-BegrippenLijst\Vista-iCT-BegrippenLijst\bin\Debug\net7.0\Database.sql
