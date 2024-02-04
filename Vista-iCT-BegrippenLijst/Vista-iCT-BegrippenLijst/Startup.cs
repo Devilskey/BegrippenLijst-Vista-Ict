@@ -48,7 +48,7 @@ namespace Vista_iCT_BegrippenLijst
             app.UseAuthentication();
             app.UseAuthorization();
 
-            //app.UseDatabaseMigration();
+            app.UseDatabaseMigration();
 
             app.UseSwaggerDocumentation();
 
