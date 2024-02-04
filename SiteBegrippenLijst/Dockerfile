@@ -27,5 +27,3 @@ COPY --from=build /usr/local/app/dist/site-begrippen-lijst /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
-
-EXPOSE 443

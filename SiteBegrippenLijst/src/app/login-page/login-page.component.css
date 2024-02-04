@@ -20,6 +20,7 @@
     width: clamp(300px, 30%, 600px );
     padding: 20px;
     background-color: #ffffff;
+    border: solid 10px;
     border-radius: 20px;
 }
 
@@ -91,7 +92,9 @@
     justify-content: center;
     text-align: center;
     font-size: 30px;
-
+    border: solid 20px;
+    border-color: rgb(204, 204, 0);
+    border-radius: 50%;
     b {
         transform: rotate(20deg);   
         color: #00555c;
