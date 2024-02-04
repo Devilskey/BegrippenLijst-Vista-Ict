@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { StaticVars } from '../Data/StaticVars';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-admin-account-page',
@@ -11,7 +11,7 @@ export class AdminAccountPageComponent {
 
   private authtoken:string= window.localStorage.getItem('Vista.BergrippenLijst.Token.Admin') ?? "";
 
-  constructor(private Api:StaticVars, private Http:HttpClient) {}
+  constructor(private Http:HttpClient) {}
 
 
   EmailData = {
@@ -30,7 +30,7 @@ export class AdminAccountPageComponent {
       Authorization: `Bearer ${this.authtoken}`,
     });
 
-    this.Http.put(`${StaticVars.Api}User/ChangeEmail`, this.EmailData ,{headers: header}).subscribe();
+    this.Http.put(`${environment.apiUrl}User/ChangeEmail`, this.EmailData ,{headers: header}).subscribe();
   }
 
   ChangePassword()
@@ -39,6 +39,6 @@ export class AdminAccountPageComponent {
       Authorization: `Bearer ${this.authtoken}`,
     });
     
-    this.Http.put(`${StaticVars.Api}User/ChangePassword`, this.PasswordData ,{headers: header}).subscribe();
+    this.Http.put(`${environment.apiUrl}User/ChangePassword`, this.PasswordData ,{headers: header}).subscribe();
   }
 }

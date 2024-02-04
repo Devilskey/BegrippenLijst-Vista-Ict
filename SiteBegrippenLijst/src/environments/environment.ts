@@ -1,7 +1,4 @@
-//Dev Envs
-
 export const environment = {
     production: true,
-    apiUrl: 'https://api.example.com',
-    // other production-specific configurations
+    apiUrl: 'http://devilskey.nl:5244/',
   };

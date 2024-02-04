@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Concept } from 'src/Objects/Concept';
-import { StaticVars } from '../Data/StaticVars';
 import { ApiResponseConcepts } from 'src/Objects/ApiResponseConcepts';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
+import { StaticVars } from '../Data/StaticVars';
 
 @Component({
   selector: 'app-home-page',
@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit{
     console.log(environment.production);
     console.log(environment.apiUrl);
 
-    this.Http.get<ApiResponseConcepts>(`${StaticVars.Api}Concept/GetConcepts`).subscribe((ApiConcepts:ApiResponseConcepts) => {
+    this.Http.get<ApiResponseConcepts>(`${environment.apiUrl}Concept/GetConcepts`).subscribe((ApiConcepts:ApiResponseConcepts) => {
        this.Concepts = JSON.parse(ApiConcepts.data);
        console.log(ApiConcepts.data);
     });

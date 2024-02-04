@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway");
+
 *{
     padding: 0;
     margin: 0;
@@ -5,9 +7,8 @@
 }
 
 body{
-    background-color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke; 
+    font-family: "Railway", sans-serif;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

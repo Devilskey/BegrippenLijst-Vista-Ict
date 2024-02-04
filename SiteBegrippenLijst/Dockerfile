@@ -13,7 +13,7 @@ COPY ./ /usr/local/app/
 RUN npm install
 
 # Generate the build of the application
-RUN npm run build --configuration=production
+RUN npm run build --configuration=production --env=API_URL=$API_URL
 
 # Stage 2: Serve app with nginx server
 
@@ -27,3 +27,5 @@ COPY --from=build /usr/local/app/dist/site-begrippen-lijst /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
+
+EXPOSE 443

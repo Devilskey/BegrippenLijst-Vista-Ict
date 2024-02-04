@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { StaticVars } from '../Data/StaticVars';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class LoginPageComponent {
     let token = "";
     let ErrorCode ="";
     let data = {Email:this.Email, Password:this.Password};
-    this.Http.post(`${StaticVars.Api}User/Login`, data , { responseType: 'text' }).subscribe((Token:string) => {
+    this.Http.post(`${environment.apiUrl}User/Login`, data , { responseType: 'text' }).subscribe((Token:string) => {
       switch(Token){
         case "Empty String detected code 500":
           token = "Error"
@@ -37,11 +37,16 @@ export class LoginPageComponent {
           token = "Error"
           break;
         default:
-          console.log(Token);
           token = Token;
           break;
       }
       if(token != "Error" && token != "") {
+        let DateTokenExpire = new Date();
+        DateTokenExpire.setHours(DateTokenExpire.getHours() + 8)
+        console.log(DateTokenExpire)
+        
+        window.localStorage.setItem('Vista.BegrippenLijst.Token.ExpireDate', DateTokenExpire.toDateString())
+
         window.localStorage.setItem('Vista.BergrippenLijst.Token.Admin', token)
         this.router.navigateByUrl("/Admin/BegrippenLijst");
       }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Concept } from 'src/Objects/Concept';
-import { StaticVars } from '../Data/StaticVars';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiResponseConcepts } from 'src/Objects/ApiResponseConcepts';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-admin-begrippen-lijst',
@@ -26,14 +26,14 @@ export class AdminBegrippenLijstComponent implements OnInit{
 
   private authtoken:string= window.localStorage.getItem('Vista.BergrippenLijst.Token.Admin') ?? "";
 
-  constructor(public staticVar: StaticVars, private Http:HttpClient) {}
+  constructor( private Http:HttpClient) {}
 
   ngOnInit(): void {
     this.GetAllConcepts();
   }
 
   GetAllConcepts(){
-    this.Http.get<ApiResponseConcepts>(`${StaticVars.Api}Concept/GetConcepts`).subscribe((ApiConcepts:ApiResponseConcepts) => {
+    this.Http.get<ApiResponseConcepts>(`${environment.apiUrl}Concept/GetConcepts`).subscribe((ApiConcepts:ApiResponseConcepts) => {
       this.Concepts = JSON.parse(ApiConcepts.data);
    });
   }
@@ -69,7 +69,7 @@ export class AdminBegrippenLijstComponent implements OnInit{
       dutchVersion: this.UpdateConcepts.Dutch_Version
     }
 
-    this.Http.put(`${StaticVars.Api}Concept/EditConcept`, UpdateConceptData, { headers: header }).subscribe(() => {});
+    this.Http.put(`${environment.apiUrl}Concept/EditConcept`, UpdateConceptData, { headers: header }).subscribe(() => {});
 
    }
 
@@ -78,7 +78,7 @@ export class AdminBegrippenLijstComponent implements OnInit{
       Authorization: `Bearer ${this.authtoken}`,
     });
 
-    this.Http.post(`${StaticVars.Api}Concept/AddConcept`, this.NewConcept, { headers: header }).subscribe(
+    this.Http.post(`${environment.apiUrl}Concept/AddConcept`, this.NewConcept, { headers: header }).subscribe(
       response => {
         if(response === 200){
            this.GetAllConcepts();
@@ -98,7 +98,7 @@ export class AdminBegrippenLijstComponent implements OnInit{
       Authorization: `Bearer ${this.authtoken}`,
     });
 
-    this.Http.delete(`${StaticVars.Api}Concept/DeleteConcept?DeleteId=${id}`, { headers: header }).subscribe( response => {
+    this.Http.delete(`${environment.apiUrl}Concept/DeleteConcept?DeleteId=${id}`, { headers: header }).subscribe( response => {
       if(response === 200){
          this.GetAllConcepts();
       }
