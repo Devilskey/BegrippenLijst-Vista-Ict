@@ -9,10 +9,10 @@ import { environment } from 'src/environments/environment';
 })
 export class AdminAccountPageComponent {
 
+  // gets the authtoken from the local storage
   private authtoken:string= window.localStorage.getItem('Vista.BergrippenLijst.Token.Admin') ?? "";
 
   constructor(private Http:HttpClient) {}
-
 
   EmailData = {
     Email: "",
@@ -23,22 +23,25 @@ export class AdminAccountPageComponent {
     Password: "",
     PasswordVerify: ""
   }
-
+  
   ChangeEmail()
   {
+    //Prepares the header for the api call
     const header = new HttpHeaders({
       Authorization: `Bearer ${this.authtoken}`,
     });
-
+    // uses the http.put to change the email adress using the api
     this.Http.put(`${environment.apiUrl}User/ChangeEmail`, this.EmailData ,{headers: header}).subscribe();
   }
 
   ChangePassword()
-  {    
+  {        
+    //Prepares the header for the api call
     const header = new HttpHeaders({
       Authorization: `Bearer ${this.authtoken}`,
     });
-    
+        // uses the http.put to change the email adress using the api
+
     this.Http.put(`${environment.apiUrl}User/ChangePassword`, this.PasswordData ,{headers: header}).subscribe();
   }
 }

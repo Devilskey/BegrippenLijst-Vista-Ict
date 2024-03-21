@@ -3,6 +3,7 @@
     <app-nav-bar></app-nav-bar>
 
     <div class="BegrippenlijstDiv">
+        <!-- makes a list of concepts on the home page visible -->>
         <div class="ListItem" *ngFor="let Item of Concepts; let i = index">
             <div class="ItemRow">
                 <a class="Button" (click)="MoreData(i)">V</a>

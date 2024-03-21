@@ -1,13 +1,15 @@
 <div class="Page">
 
+    <!-- Navigation bar-->
     <app-admin-nav-bar></app-admin-nav-bar>
 
     <div class="BegrippenlijstDiv">
+
+        <!-- This part is used to create a new concept or to edit the concept-->
         <div class="ListItem">
             <button Id="AddButton" class="AddNew" (click)="VisibleAddConcept()">+</button>
 
-
-
+            <!-- If the edit mode is equal to true then the edit concept panel is in use -->
             <div class="AddNewCollums" id="VisibleAddConcept" *ngIf="ModeEdit === true">
                 <div class="AddNewTitle">
                     <label for="EnterTitle">Title: </label>
@@ -21,17 +23,16 @@
                 <textarea class="TextInput" id="DutchConcept"  [(ngModel)]="UpdateConcepts.Dutch_Version"></textarea>
 
                 <button  class="addConcept" (click)="UpdateConcept()">Update Concept</button>
-
             </div>
 
-
-
+            <!-- If the edit mode is equal to false then you can use it to create a new concept
+            to create a new concept you need to add a title en an english and dutch discription -->
             <div class="AddNewCollums" id="VisibleAddConcept" *ngIf="ModeEdit === false">
                 <div class="AddNewTitle">
                     <label for="EnterTitle">Title: </label>
                     <input type="text" id="EnterTitle" [(ngModel)]="NewConcept.title">
                 </div>
-
+                
                 <label for="EnglishConcept">English Version: </label>
                 <textarea class="TextInput"id="EnglishConcept" [(ngModel)]="NewConcept.englishVersion"></textarea>
 
@@ -39,11 +40,12 @@
                 <textarea class="TextInput" id="DutchConcept"  [(ngModel)]="NewConcept.dutchVersion"></textarea>
 
                 <button  class="addConcept" (click)="AddConcept()">Add Concept</button>
-
             </div>
         </div>
 
-
+        <!-- This pice of code wil generate list of concepts. 
+        each concept wil have a edit button and a delete button.
+    -->
         <div class="ListItem" *ngFor="let Item of Concepts; let i = index">
             <div class="ItemRow">
                 <a class="OutButton" (click)="MoreData(Item.Id)">V</a>
@@ -61,7 +63,8 @@
                     </button>
                 </div>
             </div>
-
+            
+            <!-- shows the english and dutch translation under the titel bar-->
             <div id={{Item.Id.toString()}} class="Context">
                 <div>Nederlandse Versie: {{Item.Dutch_Version}} </div>
                 <div>English Version:  {{Item.English_Version}} </div>

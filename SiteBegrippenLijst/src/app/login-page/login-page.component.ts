@@ -15,15 +15,22 @@ export class LoginPageComponent {
 
   constructor(private router:Router, private Http:HttpClient) {}
 
+  // Routes the user back to the homepage
   BackToHomePage(){
     this.router.navigateByUrl("/");
   }
 
+  // Logs the user in 
   Login(){
+
+    //Sets the token errorcode en data variabel
     let token = "";
     let ErrorCode ="";
     let data = {Email:this.Email, Password:this.Password};
+
+    // Does a http post and waiting 
     this.Http.post(`${environment.apiUrl}User/Login`, data , { responseType: 'text' }).subscribe((Token:string) => {
+      // checks if the token is actualy a token and not an error code.
       switch(Token){
         case "Empty String detected code 500":
           token = "Error"
@@ -40,11 +47,12 @@ export class LoginPageComponent {
           token = Token;
           break;
       }
+      
+      // if the token not equal to error or empty then log the user in and set the token expire date.
       if(token != "Error" && token != "") {
         let DateTokenExpire = new Date();
         DateTokenExpire.setHours(DateTokenExpire.getHours() + 8)
-        console.log(DateTokenExpire)
-        
+
         window.localStorage.setItem('Vista.BegrippenLijst.Token.ExpireDate', DateTokenExpire.toDateString())
 
         window.localStorage.setItem('Vista.BergrippenLijst.Token.Admin', token)

@@ -57,11 +57,14 @@ export class AdminBegrippenLijstComponent implements OnInit{
       }
    }
 
+   // Updates the concept list using the Edit concept api call
    UpdateConcept() {
+    //Prepares the header
     const header = new HttpHeaders({
       Authorization: `Bearer ${this.authtoken}`,
     });
 
+    // Gets the Concept data to update a concept with
     let UpdateConceptData = {
       id: this.UpdateConcepts.Id,
       title: this.UpdateConcepts.Title,
@@ -73,11 +76,14 @@ export class AdminBegrippenLijstComponent implements OnInit{
 
    }
 
+   // Adds a concept 
    AddConcept(){
+   //Prepares the header
     const header = new HttpHeaders({
       Authorization: `Bearer ${this.authtoken}`,
     });
 
+    // POSTS the new concept data 
     this.Http.post(`${environment.apiUrl}Concept/AddConcept`, this.NewConcept, { headers: header }).subscribe(
       response => {
         if(response === 200){
@@ -92,12 +98,14 @@ export class AdminBegrippenLijstComponent implements OnInit{
     );
    }
 
+   // Delets a concept using the delete concept api call
    DeleteConcept(id:number){
-
+    // Prepares the header
     const header = new HttpHeaders({
       Authorization: `Bearer ${this.authtoken}`,
     });
 
+    // Removes the concept by calling the api.
     this.Http.delete(`${environment.apiUrl}Concept/DeleteConcept?DeleteId=${id}`, { headers: header }).subscribe( response => {
       if(response === 200){
          this.GetAllConcepts();
@@ -105,13 +113,16 @@ export class AdminBegrippenLijstComponent implements OnInit{
     });
    }
 
+   //Switches the add concept panel between add concept en edit concept
    EditConcept(index:number){
     this.UpdateConcepts = this.Concepts[index]
     this.ModeEdit = true;
     
+    // Gets the html element
     let AddConcept = document.getElementById("VisibleAddConcept");
     let AddButton = document.getElementById("AddButton");
 
+    // Changes the html elements styling and inner html
       if(AddConcept && AddButton){
         if(AddConcept.style.display == "flex" && !this.ModeEdit){
           AddConcept.style.display = "none";
@@ -124,9 +135,13 @@ export class AdminBegrippenLijstComponent implements OnInit{
       }
    }
 
-
+   // Unfolds a concept
    MoreData(id:number){
+
+    //Gets the html element based on id
     let extraContent = document.getElementById(id.toString());
+
+    // changes the concept display 
     if(extraContent){
       let stateElement = extraContent.style.display;
       if(stateElement === "block") 

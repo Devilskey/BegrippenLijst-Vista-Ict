@@ -1,26 +1,27 @@
+<!-- the login panel -->
 <div class="LoginPage">
     <div class="LoginPaneldiv">
         <div class="loginPanel">
              <p><b>Login</b></p>
 
-            <label for="Email">
-                E-mail
-            </label>
+            <!-- password label and input-->
+            <label for="Email"> E-mail </label>
             <input type="text" id="email" [(ngModel)]='Email'/>
 
-            <label for="wachtwoord">
-                Wachtwoord
-            </label>
-            
+            <!-- password label and input-->
+            <label for="wachtwoord"> Wachtwoord</label>
             <input type="text" id="wachtwoord" [(ngModel)]='Password'/>
-            <button (click)="Login()">
-                Login 
-            </button>
+            
+            <!-- logs the user in using the login function in the ts component-->
+            <button (click)="Login()">Login </button>
+            
+            <!-- redirects back to the home page using the BackToHomePage function in the ts component-->
             <button (click)="BackToHomePage()"> back</button>
         </div>
     </div>
 </div>
 
+<!-- Vista stamp -->
 <div class="Background">
     <div class="Orange"></div>
     <div class="Green">
