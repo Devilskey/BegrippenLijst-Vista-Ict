@@ -7,13 +7,20 @@ namespace extensions
 {
     public static class SwaggerSecurity
     {
+        /// <summary>
+        /// Configure swagger with the option to use a jwt token for an api call.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddSwaggerSecurityConfiguration(this IServiceCollection services)
         {
 
             services.AddSwaggerGen(config =>
             {
+                // Adds a version and applies api information.
                 config.SwaggerDoc("v1.0", new OpenApiInfo { Title = "Main API v1.0", Version = "v1.0" });
 
+                //Adds the security scheme to swagger 
                 config.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
@@ -23,7 +30,7 @@ namespace extensions
                     BearerFormat = "JWT",
                     Scheme = "Bearer"
                 });
-
+                // Configures the Requirments like bearer and then the token
                 config.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
@@ -43,6 +50,11 @@ namespace extensions
             return services;
         }
 
+        /// <summary>
+        /// Uses the swagger Documentation / enables the use of swagger
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns></returns>
         public static IApplicationBuilder UseSwaggerDocumentation(this IApplicationBuilder app)
         {
             app.UseSwagger();

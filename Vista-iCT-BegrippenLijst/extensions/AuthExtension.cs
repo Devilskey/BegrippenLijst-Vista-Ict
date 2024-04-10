@@ -7,8 +7,14 @@ namespace extensions
 {
     public static class AuthExtension
     {
+        /// <summary>
+        /// Extension that adds authentication token needed
+        /// </summary>
+        /// <param name="services"></param>
         public static void AddAuthTokenNeeded(this IServiceCollection services) 
         {
+            //Setsup the token schemes and configures the token validationparameters. 
+            //Uses envs or standaard parameters for the key, ValidIssuer and ValidAudience
             services.AddAuthentication(config =>
             {
                 config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
